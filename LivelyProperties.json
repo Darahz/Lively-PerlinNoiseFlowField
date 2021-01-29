@@ -1,0 +1,48 @@
+{
+  "backgroundColor": {
+    "text": "Font Color",
+    "type": "color",
+    "value": "#000000"
+  },
+  "flowfieldScale": {
+    "max": 100,
+    "min": 1,
+    "tick": 5,
+    "text": "Flowfield size",
+    "type": "slider",
+    "value": 30
+  },
+  "particleAmount": {
+    "max": 500,
+    "min": 10,
+    "tick": 25,
+    "text": "Amound of particles",
+    "type": "slider",
+    "value": 300
+  },
+  "maxParticleSpeed": {
+    "max": 50,
+    "min": 1,
+    "tick": 1,
+    "text": "Particle Acceleration",
+    "type": "slider",
+    "value": 5
+  },"particleSize": {
+    "max": 10,
+    "min": 1,
+    "tick": 1,
+    "text": "Particle Size",
+    "type": "slider",
+    "value": 1
+  },
+  "randomParticleColor": {
+    "type": "checkbox",
+    "value": true,
+    "text": "Random particle colors"
+  },
+  "displayFlowFeild": {
+    "type": "checkbox",
+    "value": false,
+    "text": "Display Flowfeild (slow)"
+  }
+}
