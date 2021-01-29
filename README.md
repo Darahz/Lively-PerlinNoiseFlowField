@@ -19,4 +19,5 @@ How to install :
   4. Enjoy
 
 Edited by me to use with lively
+
 Enjoy
