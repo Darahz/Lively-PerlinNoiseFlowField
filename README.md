@@ -13,3 +13,6 @@ https://github.com/CodingTrain/website/tree/main/CodingChallenges/CC_024_PerlinN
 Check out Daniels website at : 
 
 https://thecodingtrain.com/CodingChallenges/024-perlinnoiseflowfield.html
+
+Edited by me to use with lively
+Enjoy
