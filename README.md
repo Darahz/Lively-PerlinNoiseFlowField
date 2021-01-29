@@ -3,7 +3,7 @@ to use with 'Lively Wallpaper' : https://github.com/rocksdanister/lively
 
 ![Particles with different colors showing](https://github.com/Darahz/Lively-PerlinNoiseFlowField/blob/main/thumbnail.png)
 
-This is from the codingtrans 'perlin noise flow feild' coding challenge (Coding Challenge #24) video.
+This is from the codingtrains 'perlin noise flow feild' coding challenge (Coding Challenge #24) video.
 
 https://www.youtube.com/watch?v=BjoM9oKOAKY&feature=emb_title
 
