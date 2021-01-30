@@ -27,7 +27,8 @@
     "text": "Particle Acceleration",
     "type": "slider",
     "value": 5
-  },"particleSize": {
+  },
+  "particleSize": {
     "max": 10,
     "min": 1,
     "tick": 1,

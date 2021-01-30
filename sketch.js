@@ -7,8 +7,6 @@ var cols, rows;
 
 var zoff = 0;
 
-var fr;
-
 var particles = [];
 
 var flowfield;
@@ -35,7 +33,6 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   cols = floor(width / scl);
   rows = floor(height / scl);
-  fr = createP('');
 
   flowfield = new Array(cols * rows);
 
