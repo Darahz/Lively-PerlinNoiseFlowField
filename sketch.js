@@ -24,7 +24,8 @@ var root = {
   particleSize: 1,
   randomParticleColor: true,
   displayFlowFeild: false,
-  displayFPS: false
+  displayFPS: false,
+  infiniteTrails: false
 };
 
 
@@ -39,7 +40,13 @@ function setup() {
   for (var i = 0; i < root.particleAmount; i++) {
     particles[i] = new Particle();
   }
+  if(root.infiniteTrails){
+    background(root.backgroundColor.r, root.backgroundColor.g, root.backgroundColor.b);
+  }
+}
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function mouseClicked() {
@@ -94,8 +101,10 @@ function draw() {
     particles[i].edges();
     particles[i].show();
   }
-  background(root.backgroundColor.r, root.backgroundColor.g, root.backgroundColor.b, 15);
-
+  
+  if(!root.infiniteTrails){
+    background(root.backgroundColor.r, root.backgroundColor.g, root.backgroundColor.b,15);
+  }
 }
 
 function livelyPropertyListener(name, val) {
@@ -123,6 +132,9 @@ function livelyPropertyListener(name, val) {
       break;
     case "displayFPS":
       root.displayFPS = val;
+      break;
+    case "infiniteTrails":
+      root.infiniteTrails = val;
       break;
   }
 }

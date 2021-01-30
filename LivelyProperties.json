@@ -50,5 +50,10 @@
     "type": "checkbox",
     "value": false,
     "text": "Display Current FPS"
+  },
+  "infiniteTrails": {
+    "type": "checkbox",
+    "value": false,
+    "text": "Don't redraw background"
   }
 }
