@@ -13,7 +13,7 @@
     "value": 30
   },
   "particleAmount": {
-    "max": 25000,
+    "max": 500,
     "min": 10,
     "tick": 25,
     "text": "Amound of particles",
