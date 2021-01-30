@@ -14,18 +14,19 @@ var particles = [];
 var flowfield;
 
 var root = {
-  backgroundColor: {  
+  backgroundColor: {
     r: 0,
     g: 0,
     b: 0
-    },
-    flowfieldScale:30,
-    minParticleSpeed:1,
-    maxParticleSpeed:5,
-    particleAmount: 300,
-    particleSize: 1,
-    randomParticleColor:true,
-    displayFlowFeild:false    
+  },
+  flowfieldScale: 30,
+  minParticleSpeed: 1,
+  maxParticleSpeed: 5,
+  particleAmount: 300,
+  particleSize: 1,
+  randomParticleColor: true,
+  displayFlowFeild: false,
+  displayFPS: false
 };
 
 
@@ -41,21 +42,27 @@ function setup() {
   for (var i = 0; i < root.particleAmount; i++) {
     particles[i] = new Particle();
   }
-  
+
 }
 
 function mouseClicked() {
-    particles = [];
-    flowfield = new Array(cols * rows);
+  particles = [];
+  flowfield = new Array(cols * rows);
 
-    for (var i = 0; i < root.particleAmount; i++) {
-      particles[i] = new Particle();
-    }
-    background(0);
-    scl = root.flowfieldScale;
+  for (var i = 0; i < root.particleAmount; i++) {
+    particles[i] = new Particle();
+  }
+  background(0);
+  scl = root.flowfieldScale;
 }
 
 function draw() {
+  if (root.displayFPS) {
+    stroke(255);
+    textSize(20);
+    text("FPS " + int(getFrameRate()), 10, 20);
+  }
+
   var yoff = 0;
   for (var y = 0; y < rows; y++) {
     var xoff = 0;
@@ -66,8 +73,8 @@ function draw() {
       v.setMag(1);
       flowfield[index] = v;
       xoff += inc;
-      
-      if(root.displayFlowFeild == true){
+
+      if (root.displayFlowFeild == true) {
         stroke(255);
 
         push();
@@ -90,33 +97,35 @@ function draw() {
     particles[i].edges();
     particles[i].show();
   }
-  background(root.backgroundColor.r,root.backgroundColor.g,root.backgroundColor.b,15);
-  // fr.html(floor(frameRate()));
+  background(root.backgroundColor.r, root.backgroundColor.g, root.backgroundColor.b, 15);
+
 }
 
-function livelyPropertyListener(name, val)
-{
-  switch(name) {
+function livelyPropertyListener(name, val) {
+  switch (name) {
     case "backgroundColor":
-      root.backgroundColor =  hexToRgb(val);
+      root.backgroundColor = hexToRgb(val);
       break;
     case "flowfieldScale":
       root.flowfieldScale = floor(val);
-      break;    
+      break;
     case "particleAmount":
       root.particleAmount = floor(val);
-      break; 
+      break;
     case "maxParticleSpeed":
       root.maxParticleSpeed = floor(val);
-      break; 
+      break;
     case "randomParticleColor":
       root.randomParticleColor = val;
-      break; 
+      break;
     case "displayFlowFeild":
-        root.displayFlowFeild = val;
-        break; 
+      root.displayFlowFeild = val;
+      break;
     case "particleSize":
       root.particleSize = val;
+      break;
+    case "displayFPS":
+      root.displayFPS = val;
       break;
   }
 }

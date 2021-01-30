@@ -13,7 +13,7 @@
     "value": 30
   },
   "particleAmount": {
-    "max": 500,
+    "max": 25000,
     "min": 10,
     "tick": 25,
     "text": "Amound of particles",
@@ -44,5 +44,10 @@
     "type": "checkbox",
     "value": false,
     "text": "Display Flowfeild (slow)"
+  },
+  "displayFPS": {
+    "type": "checkbox",
+    "value": false,
+    "text": "Display Current FPS"
   }
 }
