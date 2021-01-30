@@ -27,7 +27,8 @@
     "text": "Particle Acceleration",
     "type": "slider",
     "value": 5
-  },"particleSize": {
+  },
+  "particleSize": {
     "max": 10,
     "min": 1,
     "tick": 1,
@@ -49,5 +50,10 @@
     "type": "checkbox",
     "value": false,
     "text": "Display Current FPS"
+  },
+  "infiniteTrails": {
+    "type": "checkbox",
+    "value": false,
+    "text": "Don't redraw background"
   }
 }
