@@ -10,6 +10,8 @@ class Particle {
     this.acc = createVector(0, 0);
     this.maxspeed = floor(random(root.minParticleSpeed, root.maxParticleSpeed));
     this.prevPos = this.pos.copy();
+    this.lifespan = floor(random(500,1000));
+    this.alive = true;
     if (root.randomParticleColor) {
       this.color = color(random(255), random(255), random(255));
     } else {
@@ -22,6 +24,14 @@ class Particle {
     this.vel.limit(this.maxspeed);
     this.pos.add(this.vel);
     this.acc.mult(0);
+
+    if(frameCount%1 == 0){
+      this.lifespan--;
+      if(this.lifespan < 0){
+        this.alive = false;
+      }
+    }
+
   }
 
   follow(vectors) {
@@ -53,7 +63,7 @@ class Particle {
 
   edges() {
     if (this.pos.x > width) {
-      this.pos.x = 0;
+      this.pos.x = 10;
       this.updatePrev();
     }
     if (this.pos.x < 0) {

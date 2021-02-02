@@ -20,7 +20,7 @@ var root = {
   flowfieldScale: 30,
   minParticleSpeed: 1,
   maxParticleSpeed: 5,
-  particleAmount: 300,
+  particleAmount: 2500,
   particleSize: 1,
   drawAlpha: 15,
   randomParticleColor: true,
@@ -34,8 +34,8 @@ var root = {
 function setup() {
   scl = root.flowfieldScale;
   createCanvas(window.innerWidth, window.innerHeight);
-  cols = floor(width / scl);
-  rows = floor(height / scl);
+  cols = floor(width / scl) + 1;
+  rows = floor(height / scl) + 1;
 
   flowfield = new Array(cols * rows);
 
@@ -53,8 +53,8 @@ function windowResized() {
 
 function mouseClicked() {
   particles = [];
-  cols = floor(width / scl);
-  rows = floor(height / scl);
+  cols = floor(width / scl) + 1;
+  rows = floor(height / scl) + 1;
   flowfield = new Array(cols * rows);
 
   for (var i = 0; i < root.particleAmount; i++) {
@@ -110,9 +110,14 @@ function draw() {
     particles[i].update();
     particles[i].edges();
     particles[i].show();
+    if(particles[i].alive == false){
+      particles.splice(i, 1);
+    }
   }
   
-  
+  for (var i = particles.length; i < root.particleAmount; i++) {
+    particles[i] = new Particle();
+  }
 }
 
 function livelyPropertyListener(name, val) {
